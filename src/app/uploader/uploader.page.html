@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>uploader</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-input  type="file" (change)="selectedM($event)" name="myFile" ></ion-input>
+  </ion-item>
+
+  <form [formGroup]="postForm">
+    <div class="desc">
+  <ion-label postition="floating">
+    <h2>Description</h2>
+
+  </ion-label>
+</div>   
+<div class="text-box">
+  <div class="text">
+  <ion-textarea type="text" formControlName="desc" aria-label="Type Here" ></ion-textarea>
+</div>
+</div>
+
+</form>
+
+
+  
+  <ion-button shape="block" color="primary" (click) ="createPost()" >Post</ion-button>
+</ion-content>

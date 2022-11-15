@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Medminders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card >
+    <div class="postButton">
+  <ion-item>
+    <ion-label>Want to add a new Medminder?</ion-label>
+  </ion-item>
+  
+    <ion-button size="medium" fill="clear" tab="reminder" routerLink="reminder" >
+      
+      <ion-icon name="add-circle-outline" ></ion-icon>
+    
+    </ion-button>
+  </div>
+  </ion-card>
+
+  <ion-card *ngFor="let p of tabReminder">
+    <ion-card-header>
+      <ion-item>
+        <ion-label *ngIf='p'>medName : {{p.medName}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label *ngIf='p'>medDose :{{p.medDose}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label *ngIf='p'>medType : {{p.medType}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label *ngIf='p'> reste {{aff(p)}} H</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-button>Delete</ion-button>
+      </ion-item>
+    </ion-card-header>
+  
+    <ion-card-content>
+     
+    </ion-card-content>
+  </ion-card>
+</ion-content>

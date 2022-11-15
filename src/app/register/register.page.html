@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerForm">
+  <ion-list>
+
+    <ion-item>
+      <ion-label postition="floating">Username</ion-label>
+      <ion-input type="text" formControlName="user_name" ></ion-input>    
+    </ion-item>
+    <ion-item>
+      <ion-label postition="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password" ></ion-input>    
+    </ion-item>
+    <ion-item>
+      <ion-label postition="floating">Confirm Password</ion-label>
+      <ion-input type="password" formControlName="cpassword" ></ion-input>    
+    </ion-item>
+    <ion-item>
+      <ion-label postition="floating">E-mail</ion-label>
+      <ion-input type="email" formControlName="email" ></ion-input>    
+    </ion-item>
+
+    <ion-item>
+      <ion-label postition="floating">Name</ion-label>
+      <ion-input type="text" formControlName="nom" ></ion-input>    
+    </ion-item>
+    
+
+
+
+
+  </ion-list>
+</form>
+<ion-item>
+  <ion-input  type="file" (change)="selectedM($event)" name="myFile" ></ion-input>
+</ion-item>
+  <ion-button fill="solid" expand="block" color="dark"(click) ="register()">Register</ion-button>
+
+
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Feed</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+<ion-content>
+
+  <div class="header">
+     <h2 *ngIf='profile'>{{profile.nom}}</h2>
+
+     <div class="flex">
+     <div class="border-bleu">
+     <div class="border-white">
+     <div class="image-box">
+     <img *ngIf='profile' [src]="profile.profile_pic">
+    </div>
+  </div>
+</div>
+</div>
+
+
+  </div>
+
+
+
+  <ion-card >
+    <div class="postButton">
+  <ion-item>
+    <ion-label>Want to add a new post?</ion-label>
+  </ion-item>
+  
+    <ion-button size="medium" fill="clear" tab="uploader" routerLink="uploader" >
+      
+      <ion-icon name="arrow-down-outline" ></ion-icon>
+    
+    </ion-button>
+  </div>
+  </ion-card>
+
+
+
+  <ion-card *ngFor="let p of tabPost">
+    
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="p.user.profile_pic[0]">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{p.user.nom}}</h2>
+          <p>just now</p>
+        </ion-label>
+        
+        
+      </ion-item>
+  
+    <ion-item lines="none" class="desc">
+     
+      <ion-label text-wrap>{{p.desc}}</ion-label>
+    </ion-item>
+    <div class="img">
+      <img class="postImage" [src]="p.postPic"> 
+      </div>
+      <ion-button size="small" fill="clear">
+        <ion-icon slot="start" name="heart"></ion-icon>
+        0
+      </ion-button>
+      
+    </ion-card>
+</ion-content>

@@ -1,0 +1,51 @@
+.header{
+    background-color: rgb(0, 204, 255);
+    height: 180px;
+    padding-top: 1px;
+}
+.header h2{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+.image-box{
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.border-white{
+    border: 4px solid;
+    width: fit-content;
+    border-radius: 50%;
+    color: white;
+}
+.border-bleu{
+    border: 6px solid #006bbf;
+    width: fit-content;
+    border-radius: 50%;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    margin-top: -1%;
+}
+.desc{
+    margin-top: -10px;
+}
+.desc ion-label{
+    line-height: 1!important;
+    font-size: 15px;
+    margin: 6px 0px 6px 0px!important;
+    min-height: 34px;
+}
+.img{
+    text-align: center;
+}
+.postImage{
+    width: 95%;
+    border-radius: 10px;
+}
+.postButton{
+    text-align: center;
+}

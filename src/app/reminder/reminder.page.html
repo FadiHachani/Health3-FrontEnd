@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reminder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  
+
+  <form [formGroup]="formReminder" novalidate>
+    <ion-item>
+      <ion-label fixed>Medicine Name</ion-label>
+      <ion-input type="text" formControlName="medName" value="" required></ion-input>
+      <span class="error ion-padding" *ngIf="formReminder.get('medName').touched && formReminder.get('medName').errors ?.required">
+        required
+      </span>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dose in gram</ion-label>
+      <ion-input type="text" formControlName="medDose" placeholder="e.g.  mg"></ion-input>
+      <span class="error ion-padding" *ngIf="formReminder.get('medDose').touched && formReminder.get('medDose').errors ?.required">
+        required
+      </span>
+    </ion-item>
+    
+    <ion-list>
+      <ion-radio-group formControlName="medType">
+        <ion-list-header>
+          <ion-label>
+            Medecine Type
+          </ion-label>
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>Syringe</ion-label>
+          <ion-radio value="Syringe"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Tablet</ion-label>
+          <ion-radio value="Tablet"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Bottle</ion-label>
+          <ion-radio value="Bottle"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Pill</ion-label>
+          <ion-radio value="Pill"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+
+
+
+
+
+
+
+
+    <ion-item>
+      <ion-label>Set Reminder Time</ion-label>
+    </ion-item>
+    
+      <ion-item>
+        <ion-label>Reminde me every</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" formControlName="remindTime" interface="popover" placeholder="Select One">
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="8">8</ion-select-option>
+        </ion-select>
+        <span class="error ion-padding" *ngIf="formReminder.get('remindTime').touched&& formReminder.get('remindTime').errors ?.required">
+          required
+        </span>
+      </ion-item>
+  
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="hh:mm a" formControlName="startTime" placeholder = "9:40 am"></ion-datetime>
+      <span class="error ion-padding" *ngIf="formReminder.get('startTime').touched && formReminder.get('startTime').errors ?.required">
+        required
+      </span>
+      
+    </ion-item>
+
+    <ion-button expand="block" (click)="confirmer()">Confirm</ion-button>
+
+
+
+
+
+
+
+
+  </form>
+  
+</ion-content>
+
+

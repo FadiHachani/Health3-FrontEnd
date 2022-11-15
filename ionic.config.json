@@ -1,0 +1,8 @@
+{
+  "name": "health3",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

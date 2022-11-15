@@ -1,0 +1,63 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Hmaps</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-searchbar ></ion-searchbar>
+
+
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-direction 
+        [origin]="origin" 
+        [destination]="destination"
+      >
+      </agm-direction>
+    </agm-map>
+
+    <ion-button expand="block"  >
+      <ion-icon name="locate" slot="strat"></ion-icon>
+      Pin Postion
+    </ion-button>
+
+    <ion-button expand="block" >
+      <ion-icon name="locate" slot="strat"></ion-icon>
+      Unpin location
+    </ion-button>
+
+    <ion-card >
+      <div>
+        <ion-item *ngFor="let p of tabPh">
+          <h2>{{p.nom}}</h2>
+          
+        </ion-item>
+        <ion-item *ngFor="let p of tabPh">
+          <ion-label text-wrap>{{p.desc}}</ion-label>
+          
+        </ion-item>
+        <ion-item *ngFor="let p of tabPh">
+         
+       
+          <ion-label text-wrap>{{p.num}}</ion-label>
+        
+        </ion-item>
+        <ion-item *ngFor="let p of tabPh">
+        
+          <ion-label text-wrap>{{p.temp}}</ion-label>
+        </ion-item>
+       
+    </div>
+    </ion-card>
+    <ion-card >
+
+        <ion-item *ngFor="let p of tabPh2">
+          <h2>{{p.nom}}</h2>
+        </ion-item>
+    </ion-card>
+</ion-content>
+
